@@ -1,0 +1,5 @@
+# Artefactos generados por el build / workflow
+dist/
+sources/
+node_modules/
+*.log

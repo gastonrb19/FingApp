@@ -1,0 +1,79 @@
+name: Deploy dashboard a GitHub Pages
+
+on:
+  # Cambios en este repo (template, script, workflow)
+  push:
+    branches: [main]
+  # Ejecución manual desde la pestaña Actions
+  workflow_dispatch:
+  # Reintento periódico para reflejar commits en fing / fing-front.
+  # (GitHub puede demorar o saltarse ejecuciones programadas en repos poco activos.)
+  schedule:
+    - cron: "*/30 * * * *"
+  # Disparo inmediato desde otro repo (ver README, sección "auto-update").
+  repository_dispatch:
+    types: [tasks-updated]
+
+# Ramas de las que se leen los archivos de tareas de cada repo fuente.
+env:
+  BACKEND_REPO: gastonrb19/fing
+  BACKEND_REF: development
+  FRONTEND_REPO: gastonrb19/fing-front
+  FRONTEND_REF: development
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout FingApp (dashboard)
+        uses: actions/checkout@v4
+
+      - name: Checkout backend (fing)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.BACKEND_REPO }}
+          ref: ${{ env.BACKEND_REF }}
+          path: sources/fing
+          # Repo público: no requiere token. Si lo haces privado, añade:
+          # token: ${{ secrets.SOURCES_TOKEN }}
+
+      - name: Checkout frontend (fing-front)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.FRONTEND_REPO }}
+          ref: ${{ env.FRONTEND_REF }}
+          path: sources/fing-front
+          # token: ${{ secrets.SOURCES_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build dashboard
+        run: node scripts/build-dashboard.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
