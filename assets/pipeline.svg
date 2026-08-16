@@ -39,6 +39,7 @@
   <path d="M610,184 L684,185" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
 
   <!-- triggers -->
-  <text x="360" y="292" fill="#64748b" font-size="13" font-weight="600">Se dispara por:</text>
-  <text x="360" y="314" fill="#94a3b8" font-size="13">push a main · cron cada 30 min · manual · repository_dispatch</text>
+  <text x="360" y="290" fill="#64748b" font-size="13" font-weight="600">Disparo instantáneo:</text>
+  <text x="360" y="312" fill="#94a3b8" font-size="13">push de tareas a development → repository_dispatch → redeploy</text>
+  <text x="360" y="333" fill="#64748b" font-size="12">respaldo: push a main de FingApp · manual · cron cada 30 min</text>
 </svg>
