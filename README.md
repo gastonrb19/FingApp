@@ -54,7 +54,15 @@ de publicarlo en GitHub Pages.
 4. **Despliega** el `index.html` resultante a **GitHub Pages**.
 
 La fuente de verdad son los Markdown de tareas de cada repo: actualizarlos con Husky y
-pushearlos a `development` es lo que alimenta el dashboard en el siguiente deploy (si usas otra
-rama, ajusta `BACKEND_REF` / `FRONTEND_REF` en el workflow). El deploy se dispara con cada push
-a `main`, de forma programada (cron cada 30 min), manualmente desde *Actions → Run workflow*, o
-por `repository_dispatch` desde los repos fuente.
+pushearlos a `development` es lo que alimenta el dashboard (si usas otra rama, ajusta
+`BACKEND_REF` / `FRONTEND_REF` en el workflow).
+
+### Disparo instantáneo
+
+`fing` y `fing-front` incluyen un workflow `notify-dashboard` que, ante un push a `development`
+que modifique `README-TASK.md` o `README-HISTORYTASK.md`, envía un `repository_dispatch` a
+FingApp y **el dashboard se redespliega al instante**. Requiere el secret
+`DASHBOARD_DISPATCH_TOKEN` (PAT con `Contents: Read and write` sobre FingApp) en cada repo fuente.
+
+El deploy también puede dispararse con un push a `main` de FingApp, manualmente desde
+*Actions → Run workflow*, o por el `cron` cada 30 min que queda como respaldo.
