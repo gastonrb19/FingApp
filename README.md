@@ -12,12 +12,14 @@ controlar gastos de forma simple.
 
 ## Hoja de ruta
 
-- **v0.5 — MVP Web:** infraestructura base, frontend web y base de datos relacional.
-- **v1.0 — Expansión Móvil:** app nativa (React Native) sobre la misma API.
-- **v1.5 — Estabilización:** seguridad de red (VPC) y refactorización.
-- **v2.0 — Bot WhatsApp:** registro de transacciones por texto en lenguaje natural.
-- **v2.5 — Bot avanzado:** sesiones con Redis (TTL) e integración MCP.
-- **v3.0 — Multimodal IA:** OCR y categorización de comprobantes con Gemini 1.5 Flash.
+El proyecto avanza de forma incremental en 6 etapas:
+
+<img src="assets/roadmap-v05.svg" alt="v0.5 — MVP Web" width="100%">
+<img src="assets/roadmap-v10.svg" alt="v1.0 — Expansión Móvil" width="100%">
+<img src="assets/roadmap-v15.svg" alt="v1.5 — Estabilización" width="100%">
+<img src="assets/roadmap-v20.svg" alt="v2.0 — Bot WhatsApp" width="100%">
+<img src="assets/roadmap-v25.svg" alt="v2.5 — Bot avanzado" width="100%">
+<img src="assets/roadmap-v30.svg" alt="v3.0 — Multimodal IA" width="100%">
 
 ## Modo de trabajo
 
@@ -26,6 +28,8 @@ git hook de **Husky** en cada commit:
 
 - **`README-TASK.md`** — tareas pendientes (`- [ ] Tarea`, con avance opcional `(50%)`).
 - **`README-HISTORYTASK.md`** — tareas completadas (`[x]` + fecha).
+
+<img src="assets/workflow.svg" alt="Flujo de trabajo con Husky en cada commit" width="100%">
 
 En cada `git commit`, el hook `pre-commit` ejecuta un script interactivo que pregunta en qué
 tarea trabajaste y su porcentaje de avance:

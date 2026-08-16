@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .box  { fill:#1e293b; stroke:#334155; stroke-width:1.5; rx:12; }
+      .lbl  { fill:#e2e8f0; font-size:18px; font-weight:600; }
+      .sub  { fill:#94a3b8; font-size:14px; }
+      .edge { stroke:#64748b; stroke-width:2; fill:none; }
+      .tag  { fill:#94a3b8; font-size:13px; font-weight:600; }
+      .t    { text-anchor:middle; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="640" rx="18" fill="#0f172a"/>
+  <text x="40" y="46" fill="#f1f5f9" font-size="22" font-weight="700">Flujo de trabajo · Husky pre-commit</text>
+
+  <!-- git commit -->
+  <rect class="box" x="360" y="72" width="180" height="50" rx="12" fill="#6366f1" stroke="#818cf8"/>
+  <text class="lbl t" x="450" y="103" fill="#ffffff">git commit</text>
+
+  <!-- husky -->
+  <rect class="box" x="335" y="152" width="230" height="50" rx="12"/>
+  <text class="lbl t" x="450" y="183">Husky · pre-commit</text>
+
+  <!-- decision -->
+  <polygon points="450,230 585,285 450,340 315,285" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text class="sub t" x="450" y="282" font-weight="600" fill="#e2e8f0">¿existe</text>
+  <text class="sub t" x="450" y="300" font-weight="600" fill="#e2e8f0">README-TASK.md?</text>
+
+  <!-- No branch -->
+  <rect class="box" x="660" y="260" width="200" height="50" rx="12"/>
+  <text class="lbl t" x="760" y="291">commit normal</text>
+  <text class="tag" x="600" y="278">No</text>
+
+  <!-- Script CLI -->
+  <rect class="box" x="300" y="372" width="300" height="60" rx="12"/>
+  <text class="lbl t" x="450" y="400">Script interactivo (CLI)</text>
+  <text class="sub t" x="450" y="420">¿en qué tarea trabajaste? ¿avance %?</text>
+  <text class="tag" x="462" y="360">Sí</text>
+
+  <!-- partial branch -->
+  <rect class="box" x="60" y="470" width="330" height="66" rx="12" stroke="#f59e0b"/>
+  <text class="lbl t" x="225" y="500" fill="#fbbf24">Avance &lt; 100%</text>
+  <text class="sub t" x="225" y="522">actualiza el % en README-TASK.md</text>
+
+  <!-- done branch -->
+  <rect class="box" x="510" y="470" width="360" height="66" rx="12" stroke="#10b981"/>
+  <text class="lbl t" x="690" y="500" fill="#34d399">Avance = 100%</text>
+  <text class="sub t" x="690" y="522">marca [x] → README-HISTORYTASK.md (fecha)</text>
+
+  <!-- git add -->
+  <rect class="box" x="300" y="562" width="300" height="50" rx="12"/>
+  <text class="lbl t" x="450" y="593">git add de ambos Markdown → commit</text>
+
+  <!-- edges -->
+  <path class="edge" d="M450,122 L450,152" marker-end="url(#arrow)"/>
+  <path class="edge" d="M450,202 L450,228" marker-end="url(#arrow)"/>
+  <path class="edge" d="M585,285 L660,285" marker-end="url(#arrow)"/>
+  <path class="edge" d="M450,340 L450,372" marker-end="url(#arrow)"/>
+  <path class="edge" d="M380,432 C300,450 250,452 225,470" marker-end="url(#arrow)"/>
+  <path class="edge" d="M520,432 C610,450 660,452 690,470" marker-end="url(#arrow)"/>
+  <path class="edge" d="M225,536 C225,560 340,566 380,575" marker-end="url(#arrow)"/>
+  <path class="edge" d="M690,536 C690,560 560,566 520,575" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="820" height="200" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <rect x="32" y="52" width="150" height="96" rx="14" fill="#d946ef"/>
+  <text x="107" y="98" text-anchor="middle" font-size="17" font-weight="600" fill="#fae8ff">Versión</text>
+  <text x="107" y="132" text-anchor="middle" font-size="34" font-weight="800" fill="#ffffff">v3.0</text>
+  <text x="215" y="86" font-size="40">🧠</text>
+  <text x="270" y="82" font-size="28" font-weight="800" fill="#f1f5f9">Multimodal IA</text>
+  <text x="215" y="126" font-size="17" fill="#94a3b8">OCR y categorización de comprobantes con</text>
+  <text x="215" y="150" font-size="17" fill="#94a3b8">Gemini 1.5 Flash (Vertex AI).</text>
+  <text x="560" y="48" font-size="13" font-weight="600" fill="#64748b">Etapa 6 de 6</text>
+  <circle cx="565" cy="70" r="7" fill="#d946ef"/>
+  <circle cx="605" cy="70" r="7" fill="#d946ef"/>
+  <circle cx="645" cy="70" r="7" fill="#d946ef"/>
+  <circle cx="685" cy="70" r="7" fill="#d946ef"/>
+  <circle cx="725" cy="70" r="7" fill="#d946ef"/>
+  <circle cx="765" cy="70" r="9" fill="#d946ef" stroke="#f5d0fe" stroke-width="2"/>
+</svg>
