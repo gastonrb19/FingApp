@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="900" height="360" rx="18" fill="#0f172a"/>
+  <text x="40" y="44" fill="#f1f5f9" font-size="22" font-weight="700">Cómo se alimenta el workflow</text>
+
+  <!-- sources -->
+  <rect x="34" y="80" width="240" height="92" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="54" y="108" fill="#e2e8f0" font-size="18" font-weight="700">fing · backend</text>
+  <text x="54" y="132" fill="#94a3b8" font-size="14">README-TASK.md</text>
+  <text x="54" y="152" fill="#94a3b8" font-size="14">README-HISTORYTASK.md</text>
+
+  <rect x="34" y="196" width="240" height="92" rx="12" fill="#1e293b" stroke="#d946ef" stroke-width="1.5"/>
+  <text x="54" y="224" fill="#e2e8f0" font-size="18" font-weight="700">fing-front · frontend</text>
+  <text x="54" y="248" fill="#94a3b8" font-size="14">README-TASK.md</text>
+  <text x="54" y="268" fill="#94a3b8" font-size="14">README-HISTORYTASK.md</text>
+
+  <text x="154" y="316" text-anchor="middle" fill="#64748b" font-size="13">rama development</text>
+
+  <!-- actions -->
+  <rect x="360" y="118" width="250" height="132" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="485" y="146" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">GitHub Actions</text>
+  <text x="380" y="176" fill="#94a3b8" font-size="14">1 · clona ambos repos</text>
+  <text x="380" y="200" fill="#94a3b8" font-size="14">2 · build-dashboard.mjs</text>
+  <text x="396" y="220" fill="#64748b" font-size="13">lee los .md y bakea los datos</text>
+  <text x="380" y="242" fill="#94a3b8" font-size="14">3 · sube el artifact</text>
+
+  <!-- pages -->
+  <rect x="686" y="150" width="188" height="70" rx="12" fill="#065f46" stroke="#10b981" stroke-width="1.5"/>
+  <text x="780" y="180" text-anchor="middle" fill="#d1fae5" font-size="18" font-weight="700">GitHub Pages</text>
+  <text x="780" y="202" text-anchor="middle" fill="#a7f3d0" font-size="12">gastonrb19.github.io/FingApp</text>
+
+  <!-- edges -->
+  <path d="M274,126 C320,126 330,150 358,165" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M274,242 C320,242 330,215 358,200" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M610,184 L684,185" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- triggers -->
+  <text x="360" y="292" fill="#64748b" font-size="13" font-weight="600">Se dispara por:</text>
+  <text x="360" y="314" fill="#94a3b8" font-size="13">push a main · cron cada 30 min · manual · repository_dispatch</text>
+</svg>
